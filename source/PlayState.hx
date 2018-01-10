@@ -5,24 +5,25 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.addons.text.FlxTypeText;
 import flixel.group.FlxGroup;
+import flixel.group.FlxSpriteGroup;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
-	private var chatText:FlxTypeText;
+	private var chatArray:Array<String> = [""];
 	
-	private var grpChat:Array<String> = [""];
+	private var grpChat:FlxSpriteGroup;
+	private var chatCutoff:Float = -30;
 	
 	override public function create():Void
 	{
-		chatText = new FlxTypeText(0, 0, FlxG.width, "<Name>: Hey", 8);
-		add(chatText);
-		chatText.start(0.001);
+		grpChat = new FlxSpriteGroup();
+		grpChat.y = 100;
+		add(grpChat);
 		
-		updateText();
-		
+		addText();
 		
 		super.create();
 	}
@@ -32,26 +33,33 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		if (FlxG.keys.justPressed.A)
 		{
-			grpChat.push("Cool" + FlxG.random.int(0, 1000));
-			updateText();
+			addText();
 		}
 	}
 	
-	private function updateText():Void
+	private function addText():Void
 	{
-		while (grpChat.length >= 5)
+		chatArray.push(Std.string(FlxG.random.int(0, 1000)));
+		
+		grpChat.forEachAlive(killSprite);
+		
+		for (i in 0...chatArray.length)
 		{
-			grpChat.remove(grpChat[0]);
+			var chatThing:FlxText = new FlxText(0, 10 * i, 0, chatArray[i]);
+			FlxG.log.add("Chat" + chatThing.y);
+			if (chatThing.y <= chatCutoff)
+				chatThing.visible = false;
+				
+			grpChat.add(chatThing);
 		}
 		
-		FlxG.log.clear();
+		chatCutoff += 10;
 		
-		for (i in 0...grpChat.length)
-		{
-			var chatText:String = "Whatever Int: " + i + grpChat[i];
-			FlxG.log.add(chatText);	
-		}
-		
-		
+		grpChat.y -= 10;
+	}
+	
+	private function killSprite(s:FlxSprite):Void
+	{
+		s.kill();
 	}
 }
