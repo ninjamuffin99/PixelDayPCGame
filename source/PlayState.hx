@@ -17,11 +17,20 @@ class PlayState extends FlxState
 	private var grpChat:FlxSpriteGroup;
 	private var chatCutoff:Float = -30;
 	
+	private var window:Window;
+	
 	override public function create():Void
 	{
+		
+		window = new Window(10, 10);
+		add(window);
+		
+		
 		grpChat = new FlxSpriteGroup();
 		grpChat.y = 100;
 		add(grpChat);
+		
+		
 		
 		addText();
 		
