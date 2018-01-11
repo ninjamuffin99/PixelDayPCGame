@@ -52,6 +52,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		
+		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_mago2_ttf);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -99,12 +109,32 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
+		type.set ("assets/data/mago2.ttf", AssetType.FONT);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
+		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
+		className.set ("assets/music/bumblebee.mp3", __ASSET__assets_music_bumblebee_mp3);
+		type.set ("assets/music/bumblebee.mp3", AssetType.MUSIC);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/sounds/girlCrying.mp3", __ASSET__assets_sounds_girlcrying_mp3);
 		type.set ("assets/sounds/girlCrying.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/message.mp3", __ASSET__assets_sounds_message_mp3);
+		type.set ("assets/sounds/message.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/mouse.mp3", __ASSET__assets_sounds_mouse_mp3);
+		type.set ("assets/sounds/mouse.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/mouseP0.mp3", __ASSET__assets_sounds_mousep0_mp3);
+		type.set ("assets/sounds/mouseP0.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/mouseP1.mp3", __ASSET__assets_sounds_mousep1_mp3);
+		type.set ("assets/sounds/mouseP1.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/mouseP2.mp3", __ASSET__assets_sounds_mousep2_mp3);
+		type.set ("assets/sounds/mouseP2.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/mouseR.mp3", __ASSET__assets_sounds_mouser_mp3);
+		type.set ("assets/sounds/mouseR.mp3", AssetType.MUSIC);
+		className.set ("assets/sounds/pcAmbience.mp3", __ASSET__assets_sounds_pcambience_mp3);
+		type.set ("assets/sounds/pcAmbience.mp3", AssetType.MUSIC);
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		className.set ("flixel/sounds/beep.mp3", __ASSET__flixel_sounds_beep_mp3);
@@ -188,15 +218,55 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/mago2.ttf";
+		className.set (id, __ASSET__assets_data_mago2_ttf);
+		
+		type.set (id, AssetType.FONT);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/music/757870_Denwa-wo-Kakete-.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/music/bumblebee.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
 		id = "assets/music/music-goes-here.txt";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
 		id = "assets/sounds/girlCrying.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/message.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/mouse.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/mouseP0.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/mouseP1.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/mouseP2.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/mouseR.mp3";
+		path.set (id, id);
+		
+		type.set (id, AssetType.MUSIC);
+		id = "assets/sounds/pcAmbience.mp3";
 		path.set (id, id);
 		
 		type.set (id, AssetType.MUSIC);
@@ -369,14 +439,44 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		
+		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
+		type.set ("assets/data/mago2.ttf", AssetType.FONT);
+		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
+		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/music/bumblebee.mp3", __ASSET__assets_music_bumblebee_mp3);
+		type.set ("assets/music/bumblebee.mp3", AssetType.MUSIC);
 		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		
 		className.set ("assets/sounds/girlCrying.mp3", __ASSET__assets_sounds_girlcrying_mp3);
 		type.set ("assets/sounds/girlCrying.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/message.mp3", __ASSET__assets_sounds_message_mp3);
+		type.set ("assets/sounds/message.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/mouse.mp3", __ASSET__assets_sounds_mouse_mp3);
+		type.set ("assets/sounds/mouse.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/mouseP0.mp3", __ASSET__assets_sounds_mousep0_mp3);
+		type.set ("assets/sounds/mouseP0.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/mouseP1.mp3", __ASSET__assets_sounds_mousep1_mp3);
+		type.set ("assets/sounds/mouseP1.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/mouseP2.mp3", __ASSET__assets_sounds_mousep2_mp3);
+		type.set ("assets/sounds/mouseP2.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/mouseR.mp3", __ASSET__assets_sounds_mouser_mp3);
+		type.set ("assets/sounds/mouseR.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/sounds/pcAmbience.mp3", __ASSET__assets_sounds_pcambience_mp3);
+		type.set ("assets/sounds/pcAmbience.mp3", AssetType.MUSIC);
 		
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
@@ -1134,9 +1234,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_mago2_ttf extends flash.text.Font { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_girlcrying_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_message_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_mouse_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_mousep0_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_mousep1_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_mousep2_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_mouser_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_pcambience_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends flash.media.Sound { }
@@ -1177,6 +1287,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+@:keep #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font { public function new () { super (); name = "mago2"; } } 
+
+
+
+
+
+
+
 
 
 
@@ -1229,9 +1349,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
+@:font("assets/data/mago2.ttf") #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
+@:file("assets/music/757870_Denwa-wo-Kakete-.mp3") #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends lime.utils.Bytes {}
+@:file("assets/music/bumblebee.mp3") #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/sounds/girlCrying.mp3") #if display private #end class __ASSET__assets_sounds_girlcrying_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/message.mp3") #if display private #end class __ASSET__assets_sounds_message_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/mouse.mp3") #if display private #end class __ASSET__assets_sounds_mouse_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/mouseP0.mp3") #if display private #end class __ASSET__assets_sounds_mousep0_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/mouseP1.mp3") #if display private #end class __ASSET__assets_sounds_mousep1_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/mouseP2.mp3") #if display private #end class __ASSET__assets_sounds_mousep2_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/mouseR.mp3") #if display private #end class __ASSET__assets_sounds_mouser_mp3 extends lime.utils.Bytes {}
+@:file("assets/sounds/pcAmbience.mp3") #if display private #end class __ASSET__assets_sounds_pcambience_mp3 extends lime.utils.Bytes {}
 @:file("assets/sounds/sounds-go-here.txt") #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends lime.utils.Bytes {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,3,0/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,3,0/assets/sounds/flixel.mp3") #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends lime.utils.Bytes {}
@@ -1276,6 +1406,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #end
 
 #if (openfl && !flash)
+@:keep #if display private #end class __ASSET__OPENFL__assets_data_mago2_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__assets_data_mago2_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_nokiafc22_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_monsterrat_ttf (); src = font.src; name = font.name; super (); }}
 

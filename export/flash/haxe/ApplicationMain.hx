@@ -34,8 +34,20 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("mago2");
+		types.push (lime.Assets.AssetType.FONT);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/music/757870_Denwa-wo-Kakete-.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/music/bumblebee.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
 		urls.push ("assets/music/music-goes-here.txt");
@@ -43,6 +55,34 @@ class ApplicationMain {
 		
 		
 		urls.push ("assets/sounds/girlCrying.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/message.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouse.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP0.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP1.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP2.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseR.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/pcAmbience.mp3");
 		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
@@ -255,7 +295,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "48",
+			build: "91",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,
