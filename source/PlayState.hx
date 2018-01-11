@@ -10,13 +10,14 @@ import flixel.system.frontEnds.SoundFrontEnd;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
+import flixel.ui.FlxSpriteButton;
 
 class PlayState extends FlxState
 {
-	
-	
 	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
+	
+	private var taskbar:FlxSprite;
 	
 	override public function create():Void
 	{
@@ -31,6 +32,14 @@ class PlayState extends FlxState
 		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
+		grpWindows.forEachAlive(addTaskBar);
+		
+		var taskH:Int = 16;
+		taskbar = new FlxSprite(0, FlxG.height - taskH);
+		taskbar.makeGraphic(FlxG.width, taskH);
+		add(taskbar);
+		
+		
 		super.create();
 	}
 
@@ -42,6 +51,11 @@ class PlayState extends FlxState
 			FlxG.sound.play("assets/sounds/mouseP" + FlxG.random.int(0, 2) + ".mp3", 0.6);
 		if (FlxG.mouse.justReleased)
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
+	}
+	
+	private function addTaskBar(w:Window):Void
+	{
+		
 	}
 	
 	
