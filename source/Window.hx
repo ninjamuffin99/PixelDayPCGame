@@ -13,7 +13,7 @@ import flixel.util.FlxColor;
  */
 class Window extends FlxSpriteGroup 
 {
-	private var title:FlxText;
+	public var title:FlxText;
 	private var outLine:FlxSprite;
 	private var topBar:FlxSprite;
 	private var topBarOutline:FlxSprite;

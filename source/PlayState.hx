@@ -13,11 +13,9 @@ import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
-	private var chatArray:Array<String> = [""];
 	
-	private var grpChat:FlxSpriteGroup;
-	private var chatCutoff:Float = -100;
 	
+	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
 	
 	override public function create():Void
@@ -27,19 +25,11 @@ class PlayState extends FlxState
 		
 		FlxG.sound.play("assets/music/757870_Denwa-wo-Kakete-.mp3", 0.7);
 		
+		grpWindows = new FlxTypedGroup<Window>();
+		add(grpWindows);
 		
 		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
-		add(chatWindow);
-		
-		
-		grpChat = new FlxSpriteGroup();
-		grpChat.x = 15;
-		grpChat.y = 120;
-		add(grpChat);
-		
-		
-		
-		addText();
+		grpWindows.add(chatWindow);
 		
 		super.create();
 	}
@@ -52,39 +42,7 @@ class PlayState extends FlxState
 			FlxG.sound.play("assets/sounds/mouseP" + FlxG.random.int(0, 2) + ".mp3", 0.6);
 		if (FlxG.mouse.justReleased)
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
-		
-		
-		if (FlxG.keys.justPressed.A)
-		{
-			addText();
-		}
 	}
 	
-	private function addText():Void
-	{
-		FlxG.sound.play("assets/sounds/message.mp3");
-		
-		chatArray.push(Std.string(FlxG.random.int(0, 1000)));
-		
-		grpChat.forEachAlive(killSprite);
-		
-		for (i in 0...chatArray.length)
-		{
-			var chatThing:GameText = new GameText(0, 10 * i, 0, chatArray[i]);
-			FlxG.log.add("Chat" + chatThing.y);
-			if (chatThing.y <= chatCutoff)
-				chatThing.visible = false;
-				
-			grpChat.add(chatThing);
-		}
-		
-		chatCutoff += 10;
-		
-		grpChat.y -= 10;
-	}
 	
-	private function killSprite(s:FlxSprite):Void
-	{
-		s.kill();
-	}
 }
