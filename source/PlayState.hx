@@ -6,11 +6,15 @@ import flixel.FlxState;
 import flixel.addons.text.FlxTypeText;
 import flixel.group.FlxGroup;
 import flixel.group.FlxSpriteGroup;
+import flixel.system.FlxAssets.FlxGraphicAsset;
 import flixel.system.frontEnds.SoundFrontEnd;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import flixel.ui.FlxSpriteButton;
+import flixel.util.FlxColor;
+import flixel.util.FlxSort;
+import openfl.display.BlendMode;
 
 class PlayState extends FlxState
 {
@@ -21,6 +25,8 @@ class PlayState extends FlxState
 	
 	override public function create():Void
 	{
+		FlxG.camera.fade(FlxColor.BLACK, 7, true);
+		
 		FlxG.sound.playMusic("assets/sounds/pcAmbience.mp3");
 		FlxG.sound.music.loopTime = 3500;
 		
@@ -39,8 +45,39 @@ class PlayState extends FlxState
 		taskbar.makeGraphic(FlxG.width, taskH);
 		add(taskbar);
 		
+		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
+		add(file);
+		
+		//addOverlayEffects();
 		
 		super.create();
+	}
+	
+	private function clickTwitter():Void
+	{
+		FlxG.openURL("https://twitter.com/ninja_muffin99");
+	}
+	
+	private function addOverlayEffects():Void
+	{
+		var scanLines:FlxSprite;
+		scanLines = new FlxSprite(0, 0);
+		scanLines.loadGraphic("assets/images/scanlines08.jpg", false, 830, 552);
+		/*scanLines.setGraphicSize(FlxG.width, FlxG.height);
+		scanLines.updateHitbox();*/
+		scanLines.blend = BlendMode.MULTIPLY;
+		scanLines.alpha = 0.1;
+		scanLines.ignoreDrawDebug = true;
+		add(scanLines);
+		
+		var vig:FlxSprite;
+		vig = new FlxSprite(0, 0);
+		vig.loadGraphic("assets/images/vignette.png", false, 1920, 1080);
+		vig.setGraphicSize(FlxG.width, FlxG.height);
+		vig.updateHitbox();
+		vig.blend = BlendMode.MULTIPLY;
+		vig.alpha = 0.4;
+		add(vig);
 	}
 
 	override public function update(elapsed:Float):Void
@@ -51,12 +88,29 @@ class PlayState extends FlxState
 			FlxG.sound.play("assets/sounds/mouseP" + FlxG.random.int(0, 2) + ".mp3", 0.6);
 		if (FlxG.mouse.justReleased)
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
+		
+		grpWindows.sort(
+		
+	}
+	
+	private function sortByActive(Order:Int, Win1:Window, Win2:Window):Int
+	{
+		return FlxSort.byValues(Order, Win1, Win2);
 	}
 	
 	private function addTaskBar(w:Window):Void
 	{
-		
+		/*
+		var taskButton:FlxSpriteButton;
+		taskButton = new FlxSpriteButton(20, taskbar.y, null, function()
+		{
+			if (w.visible = false)
+			{
+				w.visible = true;
+			}
+		});
+		taskButton.makeGraphic(60, 16);
+		add(taskButton);*/
 	}
-	
 	
 }

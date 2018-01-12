@@ -42,6 +42,18 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/scanlines08.jpg");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/twitter.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/vignette.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/music/757870_Denwa-wo-Kakete-.mp3");
 		types.push (lime.Assets.AssetType.MUSIC);
 		
@@ -295,7 +307,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "107",
+			build: "148",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,

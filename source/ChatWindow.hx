@@ -13,7 +13,7 @@ class ChatWindow extends Window
 {
 	public var chatArray:Array<String> = [""];
 	
-	private var chatCutoff:Float = -100;
+	private var chatCutoff:Float = -180;
 	private var grpChat:FlxSpriteGroup;
 
 	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="Cache Corruptor v1.0.5", color:FlxColor=0xFFFF77A8) 

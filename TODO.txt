@@ -1,0 +1,9 @@
+Todo:
+	-make desktop shortcuts
+	-make file system goin
+	-make a template for taskbar buttons
+Todo Today:
+	
+	
+Done:
+	Got simple file templates goin

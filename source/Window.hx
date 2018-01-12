@@ -3,6 +3,8 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
+import flixel.input.mouse.FlxMouseEventManager;
+import flixel.math.FlxPoint;
 import flixel.text.FlxText;
 import flixel.ui.FlxSpriteButton;
 import flixel.util.FlxColor;
@@ -57,6 +59,32 @@ class Window extends FlxSpriteGroup
 		minimizeButton = new FlxSpriteButton(width - 12 - 12, 2, null, minimizeWindow);
 		minimizeButton.makeGraphic(10, 10);
 		add(minimizeButton);
+		
+		FlxMouseEventManager.add(topBar, onDown);
+	}
+	
+	override public function update(elapsed:Float):Void 
+	{
+		super.update(elapsed);
+		
+		if (mousePressing)
+		{
+			this.x = FlxG.mouse.screenX - mouseOffset.x;
+			this.y = FlxG.mouse.screenY - mouseOffset.y;
+		}
+		
+		
+		if (FlxG.mouse.justReleased)
+			mousePressing = false;
+	}
+	
+	private var mousePressing:Bool = false;
+	private var mouseOffset:FlxPoint = FlxPoint.get(0, 0);
+	
+	private function onDown(_)
+	{
+		mousePressing = true;
+		mouseOffset.set(FlxG.mouse.screenX - this.x, FlxG.mouse.screenY - this.y);
 	}
 	
 	private function closeWindow():Void

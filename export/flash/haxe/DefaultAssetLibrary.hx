@@ -68,6 +68,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -113,6 +116,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/mago2.ttf", AssetType.FONT);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		className.set ("assets/images/scanlines08.jpg", __ASSET__assets_images_scanlines08_jpg);
+		type.set ("assets/images/scanlines08.jpg", AssetType.IMAGE);
+		className.set ("assets/images/twitter.png", __ASSET__assets_images_twitter_png);
+		type.set ("assets/images/twitter.png", AssetType.IMAGE);
+		className.set ("assets/images/vignette.png", __ASSET__assets_images_vignette_png);
+		type.set ("assets/images/vignette.png", AssetType.IMAGE);
 		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
 		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
 		className.set ("assets/music/bumblebee.mp3", __ASSET__assets_music_bumblebee_mp3);
@@ -226,6 +235,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/scanlines08.jpg";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/twitter.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/vignette.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/music/757870_Denwa-wo-Kakete-.mp3";
 		path.set (id, id);
 		
@@ -444,6 +465,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/scanlines08.jpg", __ASSET__assets_images_scanlines08_jpg);
+		type.set ("assets/images/scanlines08.jpg", AssetType.IMAGE);
+		
+		className.set ("assets/images/twitter.png", __ASSET__assets_images_twitter_png);
+		type.set ("assets/images/twitter.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/vignette.png", __ASSET__assets_images_vignette_png);
+		type.set ("assets/images/vignette.png", AssetType.IMAGE);
 		
 		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
 		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
@@ -1236,6 +1266,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_mago2_ttf extends flash.text.Font { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_scanlines08_jpg extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_twitter_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_vignette_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
@@ -1305,6 +1338,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -1351,6 +1387,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
 @:font("assets/data/mago2.ttf") #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
+@:image("assets/images/scanlines08.jpg") #if display private #end class __ASSET__assets_images_scanlines08_jpg extends lime.graphics.Image {}
+@:image("assets/images/twitter.png") #if display private #end class __ASSET__assets_images_twitter_png extends lime.graphics.Image {}
+@:image("assets/images/vignette.png") #if display private #end class __ASSET__assets_images_vignette_png extends lime.graphics.Image {}
 @:file("assets/music/757870_Denwa-wo-Kakete-.mp3") #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends lime.utils.Bytes {}
 @:file("assets/music/bumblebee.mp3") #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
