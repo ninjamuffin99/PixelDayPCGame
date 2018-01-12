@@ -46,6 +46,15 @@ class PlayState extends FlxState
 		testWin2 = new Window(40, 70, 100, 100, "Also a test");
 		grpWindows.add(testWin2);
 		
+		var errors:Int = 0;
+		while (errors <= 30)
+		{
+			var errorMsg:ErrorWindow = new ErrorWindow(60 + (errors * 4), 60 + errors);
+			grpWindows.add(errorMsg);
+			
+			errors += 1;
+		}
+		
 		
 		var taskH:Int = 16;
 		taskbar = new FlxSprite(0, FlxG.height - taskH);
