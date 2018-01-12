@@ -1,9 +1,12 @@
 Todo:
-	-make desktop shortcuts
 	-make file system goin
 	-make a template for taskbar buttons
+	ordering layers and stuf
+	
 Todo Today:
 	
 	
 Done:
 	Got simple file templates goin
+	draggable windows
+	make desktop shortcuts

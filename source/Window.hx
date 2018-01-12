@@ -60,7 +60,8 @@ class Window extends FlxSpriteGroup
 		minimizeButton.makeGraphic(10, 10);
 		add(minimizeButton);
 		
-		FlxMouseEventManager.add(topBar, onDown);
+		FlxMouseEventManager.add(topBar, winDragSet);
+		FlxMouseEventManager.add(this, onDown);
 	}
 	
 	override public function update(elapsed:Float):Void 
@@ -73,18 +74,26 @@ class Window extends FlxSpriteGroup
 			this.y = FlxG.mouse.screenY - mouseOffset.y;
 		}
 		
-		
 		if (FlxG.mouse.justReleased)
+		{
+			pressDown = false;
 			mousePressing = false;
+		}
 	}
 	
 	private var mousePressing:Bool = false;
 	private var mouseOffset:FlxPoint = FlxPoint.get(0, 0);
 	
-	private function onDown(_)
+	private function winDragSet(_)
 	{
 		mousePressing = true;
 		mouseOffset.set(FlxG.mouse.screenX - this.x, FlxG.mouse.screenY - this.y);
+	}
+	
+	public var pressDown:Bool = false;
+	private function onDown(_)
+	{
+		pressDown = true;
 	}
 	
 	private function closeWindow():Void

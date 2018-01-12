@@ -20,6 +20,7 @@ class PlayState extends FlxState
 {
 	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
+	private var testWindow:Window;
 	
 	private var taskbar:FlxSprite;
 	
@@ -38,7 +39,11 @@ class PlayState extends FlxState
 		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
-		grpWindows.forEachAlive(addTaskBar);
+		testWindow = new Window(50, 50, 200, 200, "Test");
+		grpWindows.add(testWindow);
+		
+		
+		grpWindows.forEachAlive(checkMouse);
 		
 		var taskH:Int = 16;
 		taskbar = new FlxSprite(0, FlxG.height - taskH);
@@ -84,19 +89,24 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		
+		grpWindows.forEachAlive(checkMouse);
+		
 		if (FlxG.mouse.justPressed)
 			FlxG.sound.play("assets/sounds/mouseP" + FlxG.random.int(0, 2) + ".mp3", 0.6);
 		if (FlxG.mouse.justReleased)
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
 		
-		grpWindows.sort(
-		
 	}
 	
-	private function sortByActive(Order:Int, Win1:Window, Win2:Window):Int
+	private function checkMouse(w:Window):Void
 	{
-		return FlxSort.byValues(Order, Win1, Win2);
+		if (w.pressDown && grpWindows.members[grpWindows.length] != w)
+		{
+			grpWindows.members.push(w);
+			grpWindows.members.remove(w);
+		}
 	}
+	
 	
 	private function addTaskBar(w:Window):Void
 	{
