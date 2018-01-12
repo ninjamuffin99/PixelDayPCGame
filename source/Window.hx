@@ -24,6 +24,9 @@ class Window extends FlxSpriteGroup
 	
 	private var closeButton:FlxSpriteButton;
 	private var minimizeButton:FlxSpriteButton;
+	
+	
+	public var zPos:Float = FlxG.random.float(0, 0.001);
 
 	public function new(X:Float = 0, Y:Float = 0, width:Int = 200, height:Int = 200, name:String = "", color:FlxColor = 0xFFFF77A8) 
 	{
@@ -61,7 +64,6 @@ class Window extends FlxSpriteGroup
 		add(minimizeButton);
 		
 		FlxMouseEventManager.add(topBar, winDragSet);
-		FlxMouseEventManager.add(this, onDown);
 	}
 	
 	override public function update(elapsed:Float):Void 
@@ -79,9 +81,10 @@ class Window extends FlxSpriteGroup
 			pressDown = false;
 			mousePressing = false;
 		}
+		
 	}
 	
-	private var mousePressing:Bool = false;
+	public var mousePressing:Bool = false;
 	private var mouseOffset:FlxPoint = FlxPoint.get(0, 0);
 	
 	private function winDragSet(_)

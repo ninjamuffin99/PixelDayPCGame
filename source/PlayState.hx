@@ -21,6 +21,7 @@ class PlayState extends FlxState
 	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
 	private var testWindow:Window;
+	private var testWin2:Window;
 	
 	private var taskbar:FlxSprite;
 	
@@ -42,8 +43,9 @@ class PlayState extends FlxState
 		testWindow = new Window(50, 50, 200, 200, "Test");
 		grpWindows.add(testWindow);
 		
+		testWin2 = new Window(40, 70, 100, 100, "Also a test");
+		grpWindows.add(testWin2);
 		
-		grpWindows.forEachAlive(checkMouse);
 		
 		var taskH:Int = 16;
 		taskbar = new FlxSprite(0, FlxG.height - taskH);
@@ -91,22 +93,28 @@ class PlayState extends FlxState
 		
 		grpWindows.forEachAlive(checkMouse);
 		
+		//grpWindows.sort(sortByZ);
+		
 		if (FlxG.mouse.justPressed)
 			FlxG.sound.play("assets/sounds/mouseP" + FlxG.random.int(0, 2) + ".mp3", 0.6);
 		if (FlxG.mouse.justReleased)
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
-		
 	}
 	
+	private function sortByZ(Order:Int, Win1:Window, Win2:Window):Int
+	{
+		return FlxSort.byValues(Order, Win1.zPos, Win2.zPos);
+	}
+	
+	var pressSteps:Int = 0;
 	private function checkMouse(w:Window):Void
 	{
-		if (w.pressDown && grpWindows.members[grpWindows.length] != w)
+		if (w.mousePressing)
 		{
-			grpWindows.members.push(w);
 			grpWindows.members.remove(w);
+			grpWindows.members.push(w);
 		}
 	}
-	
 	
 	private function addTaskBar(w:Window):Void
 	{
