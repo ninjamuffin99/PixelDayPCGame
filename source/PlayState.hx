@@ -24,6 +24,7 @@ class PlayState extends FlxState
 	private var testWin2:Window;
 	
 	private var taskbar:FlxSprite;
+	private var grpTaskbar:FlxTypedGroup<TaskbarButton>;
 	
 	override public function create():Void
 	{
@@ -46,20 +47,15 @@ class PlayState extends FlxState
 		testWin2 = new Window(40, 70, 100, 100, "Also a test");
 		grpWindows.add(testWin2);
 		
-		var errors:Int = 0;
-		while (errors <= 30)
-		{
-			var errorMsg:ErrorWindow = new ErrorWindow(60 + (errors * 4), 60 + errors);
-			grpWindows.add(errorMsg);
-			
-			errors += 1;
-		}
-		
-		
 		var taskH:Int = 16;
 		taskbar = new FlxSprite(0, FlxG.height - taskH);
 		taskbar.makeGraphic(FlxG.width, taskH);
 		add(taskbar);
+		
+		grpTaskbar = new FlxTypedGroup<TaskbarButton>();
+		add(grpTaskbar);
+		
+		grpWindows.forEachAlive(initTaskBar);
 		
 		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
 		add(file);
@@ -110,19 +106,29 @@ class PlayState extends FlxState
 			FlxG.sound.play(AssetPaths.mouseR__mp3, 0.6);
 	}
 	
-	private function sortByZ(Order:Int, Win1:Window, Win2:Window):Int
-	{
-		return FlxSort.byValues(Order, Win1.zPos, Win2.zPos);
-	}
-	
 	var pressSteps:Int = 0;
 	private function checkMouse(w:Window):Void
 	{
 		if (w.mousePressing)
 		{
-			grpWindows.members.remove(w);
-			grpWindows.members.push(w);
+			moveWindows(w);
 		}
+	}
+	
+	private function initTaskBar(w:Window):Void
+	{
+		var taskButton:TaskbarButton = new TaskbarButton(17 * grpTaskbar.members.length, taskbar.y, function()
+		{
+			w.visible = !w.visible; 
+			moveWindows(w);
+		});
+		grpTaskbar.add(taskButton);
+	}
+	
+	private function moveWindows(w:Window):Void
+	{
+		grpWindows.members.remove(w);
+		grpWindows.members.push(w);
 	}
 	
 	private function addTaskBar(w:Window):Void
