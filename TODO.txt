@@ -1,5 +1,6 @@
 Todo:
 	-make file system goin
+	-make user select screen
 	-cleanup taskbar buttons a bit? 
 		right now it only works if you call it manually
 		make it so you can put a graphic onto it
@@ -14,3 +15,4 @@ Done:
 	make desktop shortcuts
 	ordering layers and stuff
 	-make a template for taskbar buttons
+	-booting stuff

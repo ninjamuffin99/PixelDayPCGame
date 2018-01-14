@@ -30,8 +30,7 @@ class PlayState extends FlxState
 	{
 		FlxG.camera.fade(FlxColor.BLACK, 7, true);
 		
-		FlxG.sound.playMusic("assets/sounds/pcAmbience.mp3");
-		FlxG.sound.music.loopTime = 3500;
+		
 		
 		FlxG.sound.play("assets/music/757870_Denwa-wo-Kakete-.mp3", 0.7);
 		
