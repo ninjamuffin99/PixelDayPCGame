@@ -1,6 +1,8 @@
 Todo:
 	-make file system goin
-	-make a template for taskbar buttons
+	-cleanup taskbar buttons a bit? 
+		right now it only works if you call it manually
+		make it so you can put a graphic onto it
 	
 	
 Todo Today:
@@ -11,3 +13,4 @@ Done:
 	draggable windows
 	make desktop shortcuts
 	ordering layers and stuff
+	-make a template for taskbar buttons

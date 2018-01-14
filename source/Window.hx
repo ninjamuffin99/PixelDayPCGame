@@ -24,9 +24,6 @@ class Window extends FlxSpriteGroup
 	
 	private var closeButton:FlxSpriteButton;
 	private var minimizeButton:FlxSpriteButton;
-	
-	
-	public var zPos:Float = FlxG.random.float(0, 0.001);
 
 	public function new(X:Float = 0, Y:Float = 0, width:Int = 200, height:Int = 200, name:String = "", color:FlxColor = 0xFFFF77A8) 
 	{
@@ -70,10 +67,10 @@ class Window extends FlxSpriteGroup
 	{
 		super.update(elapsed);
 		
-		if (mousePressing)
+		if (mousePressing && FlxG.mouse.x >= 0 && FlxG.mouse.x <= FlxG.width && FlxG.mouse.y >= 0 && FlxG.mouse.y <= FlxG.height)
 		{
-			this.x = FlxG.mouse.screenX - mouseOffset.x;
-			this.y = FlxG.mouse.screenY - mouseOffset.y;
+			this.x = FlxG.mouse.x - mouseOffset.x;
+			this.y = FlxG.mouse.y - mouseOffset.y;
 		}
 		
 		if (FlxG.mouse.justReleased)
@@ -90,7 +87,7 @@ class Window extends FlxSpriteGroup
 	private function winDragSet(_)
 	{
 		mousePressing = true;
-		mouseOffset.set(FlxG.mouse.screenX - this.x, FlxG.mouse.screenY - this.y);
+		mouseOffset.set(FlxG.mouse.x - this.x, FlxG.mouse.y - this.y);
 	}
 	
 	public var pressDown:Bool = false;

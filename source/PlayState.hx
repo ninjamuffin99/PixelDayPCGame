@@ -130,20 +130,4 @@ class PlayState extends FlxState
 		grpWindows.members.remove(w);
 		grpWindows.members.push(w);
 	}
-	
-	private function addTaskBar(w:Window):Void
-	{
-		/*
-		var taskButton:FlxSpriteButton;
-		taskButton = new FlxSpriteButton(20, taskbar.y, null, function()
-		{
-			if (w.visible = false)
-			{
-				w.visible = true;
-			}
-		});
-		taskButton.makeGraphic(60, 16);
-		add(taskButton);*/
-	}
-	
 }

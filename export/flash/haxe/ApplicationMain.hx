@@ -307,7 +307,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "183",
+			build: "189",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,
