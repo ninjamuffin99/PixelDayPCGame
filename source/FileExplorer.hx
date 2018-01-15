@@ -8,6 +8,7 @@ import flixel.util.FlxColor;
  */
 class FileExplorer extends Window 
 {
+	private var baseFiles:Array<File>;
 
 	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="File Explorer", color:FlxColor=0xFFFF77A8) 
 	{

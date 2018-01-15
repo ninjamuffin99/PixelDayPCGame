@@ -26,6 +26,8 @@ class PlayState extends FlxState
 	private var taskbar:FlxSprite;
 	private var grpTaskbar:FlxTypedGroup<TaskbarButton>;
 	
+	private var clock:FlxText;
+	
 	override public function create():Void
 	{
 		FlxG.camera.fade(FlxColor.BLACK, 7, true);
@@ -40,7 +42,7 @@ class PlayState extends FlxState
 		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
-		testWindow = new Window(50, 50, 200, 200, "Test");
+		testWindow = new Window(50, 50, 200, 200, "Test Window");
 		grpWindows.add(testWindow);
 		
 		testWin2 = new Window(40, 70, 100, 100, "Also a test");
@@ -58,6 +60,11 @@ class PlayState extends FlxState
 		
 		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
 		add(file);
+		
+		var current_date:Date = Date.now();
+		clock = new FlxText(FlxG.width - 50, taskbar.y, 0, (current_date.getMonth() + 1) + "/" + current_date.getDate() + "/" + current_date.getFullYear());
+		clock.color = FlxColor.BLACK;
+		add(clock);
 		
 		//addOverlayEffects();
 		
