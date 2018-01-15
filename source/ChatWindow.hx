@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
+import flixel.text.FlxText;
 import flixel.util.FlxColor;
 
 /**
@@ -11,18 +12,19 @@ import flixel.util.FlxColor;
  */
 class ChatWindow extends Window 
 {
-	public var chatArray:Array<String> = [""];
+	public var chatArray:Array<String> = ["hey", "hi", "how are you doing?"];
+	public var textArray:Array<String> = [];
 	
 	private var chatCutoff:Float = -180;
-	private var grpChat:FlxSpriteGroup;
+	private var grpChat:FlxText;
 
 	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="Cache Corruptor v1.0.5", color:FlxColor=0xFFFF77A8) 
 	{
 		super(X, Y, width, height, name, color);
 		
-		grpChat = new FlxSpriteGroup();
+		grpChat = new FlxText();
 		grpChat.x = 15;
-		grpChat.y = 190;
+		grpChat.y = 195;
 		add(grpChat);
 		
 		addText();
@@ -43,29 +45,24 @@ class ChatWindow extends Window
 	private function addText():Void
 	{
 		FlxG.sound.play("assets/sounds/message.mp3");
+		textArray.push(chatArray[0]);
+		chatArray.remove(chatArray[0]);
+		grpChat.text = "";
 		
-		chatArray.push(Std.string(FlxG.random.int(0, 1000)));
-		
-		grpChat.forEachAlive(killSprite);
-		
-		for (i in 0...chatArray.length)
+		if (textArray.length >= 19)
 		{
-			var chatThing:GameText = new GameText(0, 10 * i, 0, chatArray[i]);
-			FlxG.log.add("Chat" + chatThing.y);
-			if (chatThing.y <= chatCutoff)
-				chatThing.visible = false;
-				
-			grpChat.add(chatThing);
+			textArray.remove(textArray[0]);
+		}
+		else
+		{
+			grpChat.y -= 10;
+		}
+		for (i in 0...textArray.length)
+		{
+			grpChat.text += textArray[i];
+			grpChat.text += "\n";
 		}
 		
-		chatCutoff += 10;
-		
-		grpChat.y -= 10;
-	}
-	
-	private function killSprite(s:FlxSprite):Void
-	{
-		s.kill();
 	}
 	
 }
