@@ -16,3 +16,4 @@ Done:
 	ordering layers and stuff
 	-make a template for taskbar buttons
 	-booting stuff
+	optimize chat stuff

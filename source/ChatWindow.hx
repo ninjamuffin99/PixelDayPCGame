@@ -12,11 +12,13 @@ import flixel.util.FlxColor;
  */
 class ChatWindow extends Window 
 {
-	public var chatArray:Array<String> = ["hey", "hi", "how are you doing?"];
+	public var chatArray:Array<String> = ["hey", "hi", "how are you doing?", "im doing good"];
 	public var textArray:Array<String> = [];
 	
 	private var chatCutoff:Float = -180;
 	private var grpChat:FlxText;
+	
+	private var erasing:Bool = false;
 
 	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="Cache Corruptor v1.0.5", color:FlxColor=0xFFFF77A8) 
 	{
@@ -26,6 +28,8 @@ class ChatWindow extends Window
 		grpChat.x = 15;
 		grpChat.y = 195;
 		add(grpChat);
+		
+		chatArray = ChatLogs.dates[0][2];
 		
 		addText();
 		

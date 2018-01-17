@@ -16,11 +16,15 @@ class ErrorWindow extends Window
 	{
 		super(X, Y, width, height, name, color);
 		
-		errorText = new FlxText(0, 0, 0, "AN UNEXPECTED ERROR HAS OCCURED", 14);
-		errorText.screenCenter();
-		errorText.color = title.color;
+		errorText = new FlxText(12, height / 5, width - 12, "AN UNEXPECTED ERROR HAS OCCURED", 8);
+		errorText.color = title.color.getDarkened();
 		add(errorText);
 		
+	}
+	
+	public function updateText(text:String):Void
+	{
+		errorText.text = text;
 	}
 	
 }

@@ -81,6 +81,14 @@ class Window extends FlxSpriteGroup
 		
 	}
 	
+	override public function kill():Void 
+	{
+		super.kill();
+		
+		mouseOffset.x = 0;
+		mouseOffset.y = 0;
+	}
+	
 	public var mousePressing:Bool = false;
 	private var mouseOffset:FlxPoint = FlxPoint.get(0, 0);
 	

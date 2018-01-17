@@ -20,7 +20,7 @@ class File extends FlxSpriteGroup
 	private var fileName:FlxText;
 	
 	/**
-	 * File template for ddisplay, graphic should be a square then it's resized to 16px
+	 * File template for display, graphic should be a square then it's resized to 16px
 	 * @param	X
 	 * @param	Y
 	 * @param	iconGraphic

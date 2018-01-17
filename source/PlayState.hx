@@ -20,11 +20,13 @@ class PlayState extends FlxState
 {
 	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
-	private var testWindow:Window;
+	private var testWindow:ErrorWindow;
 	private var testWin2:Window;
 	
 	private var taskbar:FlxSprite;
 	private var grpTaskbar:FlxTypedGroup<TaskbarButton>;
+	
+	private var grpShortcuts:FlxTypedGroup<File>;
 	
 	private var clock:FlxText;
 	
@@ -32,7 +34,11 @@ class PlayState extends FlxState
 	{
 		FlxG.camera.fade(FlxColor.BLACK, 7, true);
 		
+		grpShortcuts = new FlxTypedGroup<File>();
+		add(grpShortcuts);
 		
+		
+		addShortcuts();
 		
 		FlxG.sound.play("assets/music/757870_Denwa-wo-Kakete-.mp3", 0.7);
 		
@@ -42,7 +48,8 @@ class PlayState extends FlxState
 		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
-		testWindow = new Window(50, 50, 200, 200, "Test Window");
+		testWindow = new ErrorWindow(50, 50, 200, 100, "WARNING");
+		testWindow.updateText("WARNING: FlixOS has booted into compatibility mode due to harddrive instability. Depending on severity, some programs may not have laoded correctly");
 		grpWindows.add(testWindow);
 		
 		testWin2 = new Window(40, 70, 100, 100, "Also a test");
@@ -58,8 +65,6 @@ class PlayState extends FlxState
 		
 		grpWindows.forEachAlive(initTaskBar);
 		
-		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
-		add(file);
 		
 		var current_date:Date = Date.now();
 		clock = new FlxText(FlxG.width - 50, taskbar.y, 0, (current_date.getMonth() + 1) + "/" + current_date.getDate() + "/" + current_date.getFullYear());
@@ -71,9 +76,26 @@ class PlayState extends FlxState
 		super.create();
 	}
 	
+	private function addShortcuts():Void
+	{
+		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
+		grpShortcuts.add(file);
+		
+		
+		var chatShortcut:File = new File(8, 8, null, clickChat, "ChatCorruptor");
+		grpShortcuts.add(chatShortcut);
+		
+	}
+	
 	private function clickTwitter():Void
 	{
 		FlxG.openURL("https://twitter.com/ninja_muffin99");
+	}
+	
+	private function clickChat():Void
+	{
+		chatWindow.revive();
+		checkMouse(chatWindow);
 	}
 	
 	private function addOverlayEffects():Void
