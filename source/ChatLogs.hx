@@ -15,7 +15,8 @@ class ChatLogs
 			1, 23,
 			[
 				"Ummm... hey?!",
-				"hello!"
+				"hello!",
+				
 			]
 		],
 		//Jan 24

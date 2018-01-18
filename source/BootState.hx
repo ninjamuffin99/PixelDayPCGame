@@ -21,7 +21,7 @@ class BootState extends FlxState
 		FlxG.sound.playMusic("assets/sounds/pcAmbience.mp3");
 		FlxG.sound.music.loopTime = 3500;
 		
-		printing = new FlxText(2, 2, 0, "FlixOS 1.8.30 \n(c) 1997-1999 Newgrounds inc. \n\"Everything, by Everyone!\" All Rights Reserved \nInitializing RAM", 8);
+		printing = new FlxText(2, 2, 0, "FlixOS 1.8.30 \n(c) 1997-1999 Newgrounds inc. \n\"Everything, by Everyone!\" All Rights Reserved \nSource code: github.com/ninjamuffin99/PixelDayPCGame\nInitializing RAM", 8);
 		add(printing);
 		
 		super.create();
