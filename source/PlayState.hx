@@ -45,7 +45,7 @@ class PlayState extends FlxState
 		grpWindows = new FlxTypedGroup<Window>();
 		add(grpWindows);
 		
-		chatWindow = new ChatWindow(10, 10, 200, 200, "Cache corruptor v1.0.3");
+		chatWindow = new ChatWindow(10, 10, 256, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
 		testWindow = new ErrorWindow(50, 50, 200, 100, "WARNING");

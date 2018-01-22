@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxSpriteGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -12,11 +13,12 @@ import flixel.util.FlxColor;
  */
 class ChatWindow extends Window 
 {
-	public var chatArray:Array<String> = ["hey", "hi", "how are you doing?", "im doing good"];
+	public var chatArray:Array<String> = [];
 	public var textArray:Array<String> = [];
 	
 	private var chatCutoff:Float = -180;
 	private var grpChat:FlxText;
+	private var grpButtons:FlxSpriteGroup;
 	
 	private var erasing:Bool = false;
 
@@ -24,24 +26,82 @@ class ChatWindow extends Window
 	{
 		super(X, Y, width, height, name, color);
 		
-		grpChat = new FlxText();
-		grpChat.x = 15;
-		grpChat.y = 195;
-		add(grpChat);
+		grpButtons = new FlxSpriteGroup();
+		add(grpButtons);
 		
-		chatArray = ChatLogs.dates[0][2];
 		
-		addText();
+		//initChat();
+		
+		initButtons();
 		
 	}
 	
+	private function initChat():Void
+	{
+		grpChat = new FlxText();
+		grpChat.x = 8;
+		grpChat.y = 195;
+		add(grpChat);
+		
+		grpButtons.kill();
+		
+		newChat();
+		addText();
+	}
+	
+	private function initButtons():Void
+	{
+		grpButtons.revive();
+		
+		for (i in 0...ChatLogs.dates.length)
+		{
+			var chatNum:File;
+			chatNum = new File(8, 10 * i, null, function()
+			{
+				initChat();
+				chatArray = ChatLogs.dates[i][2];
+			}, "text" + i, FlxColor.BLACK);
+			grpButtons.add(chatNum);
+		}
+	}
+	
+	override public function revive():Void 
+	{
+		super.revive();
+		
+		if (textArray.length > 0)
+		{
+			textArray = [];
+			grpChat.y = 195 + 10;
+			grpChat.text = "";
+		}
+		
+		newChat();
+	}
+	
+	private function newChat():Void
+	{
+		//chatArray = ChatLogs.dates[FlxG.random.int(0, ChatLogs.dates.length)][2];
+	}
+	
+	private var chatTimer:Float = 4;
 	override public function update(elapsed:Float):Void 
 	{
 		super.update(elapsed);
 		
-		if (FlxG.keys.justPressed.A)
+		
+		if (FlxG.keys.justPressed.A || chatTimer <= 0)
 		{
-			addText();
+			if (chatArray.length > 0)
+			{
+				addText();
+				chatTimer = (FlxG.random.float(chatArray[0].length, chatArray[0].length + 3) / FlxG.random.int(6, 12)) + 0.5;
+			}
+			
+		}
+		else
+		{
+			chatTimer -= FlxG.elapsed;
 		}
 	}
 	

@@ -1,12 +1,9 @@
 Todo:
-	-make file system goin
 	-make user select screen
 	-cleanup taskbar buttons a bit? 
 		right now it only works if you call it manually
 		make it so you can put a graphic onto it
-	
-	
-Todo Today:
+	-make it so in the chat corruptor you can select files and stuff",
 	
 	
 Done:
