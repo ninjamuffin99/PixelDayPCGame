@@ -13,7 +13,7 @@ import flixel.util.FlxColor;
  */
 class ChatWindow extends Window 
 {
-	public var chatArray:Array<String> = [];
+	public var chatArray:Array<String> = [""];
 	public var textArray:Array<String> = [];
 	
 	private var chatCutoff:Float = -180;
@@ -29,20 +29,34 @@ class ChatWindow extends Window
 		grpButtons = new FlxSpriteGroup();
 		add(grpButtons);
 		
-		
-		//initChat();
-		
-		initButtons();
-		
-	}
-	
-	private function initChat():Void
-	{
 		grpChat = new FlxText();
 		grpChat.x = 8;
 		grpChat.y = 195;
 		add(grpChat);
 		
+		//initChat();
+		
+		for (i in 0...ChatLogs.dates.length)
+		{
+			var chatNum:File;
+			chatNum = new File(8, (11 * i) + 18, null, function()
+			{
+				initChat();
+				chatArray = ChatLogs.dates[i][2];
+				grpButtons.remove(chatNum);
+			}, "text" + i, FlxColor.BLACK);
+			grpButtons.add(chatNum);
+		}
+		
+		initButtons();
+		
+		
+	}
+	
+	private function initChat():Void
+	{
+		
+		grpChat.revive();
 		grpButtons.kill();
 		
 		newChat();
@@ -51,37 +65,29 @@ class ChatWindow extends Window
 	
 	private function initButtons():Void
 	{
-		grpButtons.revive();
 		
-		for (i in 0...ChatLogs.dates.length)
-		{
-			var chatNum:File;
-			chatNum = new File(8, 10 * i, null, function()
-			{
-				initChat();
-				chatArray = ChatLogs.dates[i][2];
-			}, "text" + i, FlxColor.BLACK);
-			grpButtons.add(chatNum);
-		}
+		
+		grpButtons.revive();
+		grpChat.kill();
+		
+		
 	}
 	
 	override public function revive():Void 
 	{
 		super.revive();
-		
+		newChat();
+		initButtons();
+	}
+	
+	private function newChat():Void
+	{
 		if (textArray.length > 0)
 		{
 			textArray = [];
 			grpChat.y = 195 + 10;
 			grpChat.text = "";
 		}
-		
-		newChat();
-	}
-	
-	private function newChat():Void
-	{
-		//chatArray = ChatLogs.dates[FlxG.random.int(0, ChatLogs.dates.length)][2];
 	}
 	
 	private var chatTimer:Float = 4;
@@ -96,6 +102,10 @@ class ChatWindow extends Window
 			{
 				addText();
 				chatTimer = (FlxG.random.float(chatArray[0].length, chatArray[0].length + 3) / FlxG.random.int(6, 12)) + 0.5;
+			}
+			else
+			{
+				initButtons();
 			}
 			
 		}
