@@ -1,10 +1,8 @@
 Todo:
 	-make user select screen
-	-cleanup taskbar buttons a bit? 
-		right now it only works if you call it manually
-		make it so you can put a graphic onto it
-	-make it so in the chat corruptor you can select files and stuff",
-	
+	make so that the bumble bee music plays
+	maybe fix up some story bits and play through it
+	format story stuff so that itll al fit on the screen
 	
 Done:
 	Got simple file templates goin
@@ -14,3 +12,8 @@ Done:
 	-make a template for taskbar buttons
 	-booting stuff
 	optimize chat stuff
+	-cleanup taskbar buttons a bit? 
+		right now it only works if you call it manually
+		make it so you can put a graphic onto it
+	-make it so in the chat corruptor you can select files and stuff",
+	
