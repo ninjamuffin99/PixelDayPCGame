@@ -53,11 +53,11 @@ class Window extends FlxSpriteGroup
 		add(title);
 		
 		closeButton = new FlxSpriteButton(width - 12, 2, null, closeWindow);
-		closeButton.makeGraphic(10, 10);
+		closeButton.loadGraphic(AssetPaths.exit__png);
 		add(closeButton);
 		
 		minimizeButton = new FlxSpriteButton(width - 12 - 12, 2, null, minimizeWindow);
-		minimizeButton.makeGraphic(10, 10);
+		minimizeButton.loadGraphic(AssetPaths.minimize__png);
 		add(minimizeButton);
 		
 		FlxMouseEventManager.add(topBar, winDragSet);

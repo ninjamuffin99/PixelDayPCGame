@@ -71,6 +71,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -114,8 +120,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
 		type.set ("assets/data/mago2.ttf", AssetType.FONT);
+		className.set ("assets/images/chat.png", __ASSET__assets_images_chat_png);
+		type.set ("assets/images/chat.png", AssetType.IMAGE);
+		className.set ("assets/images/cursor.png", __ASSET__assets_images_cursor_png);
+		type.set ("assets/images/cursor.png", AssetType.IMAGE);
+		className.set ("assets/images/cursorBW.png", __ASSET__assets_images_cursorbw_png);
+		type.set ("assets/images/cursorBW.png", AssetType.IMAGE);
+		className.set ("assets/images/exit.png", __ASSET__assets_images_exit_png);
+		type.set ("assets/images/exit.png", AssetType.IMAGE);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		className.set ("assets/images/minimize.ase", __ASSET__assets_images_minimize_ase);
+		type.set ("assets/images/minimize.ase", AssetType.BINARY);
+		className.set ("assets/images/minimize.png", __ASSET__assets_images_minimize_png);
+		type.set ("assets/images/minimize.png", AssetType.IMAGE);
 		className.set ("assets/images/scanlines08.jpg", __ASSET__assets_images_scanlines08_jpg);
 		type.set ("assets/images/scanlines08.jpg", AssetType.IMAGE);
 		className.set ("assets/images/twitter.png", __ASSET__assets_images_twitter_png);
@@ -231,10 +249,34 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set (id, __ASSET__assets_data_mago2_ttf);
 		
 		type.set (id, AssetType.FONT);
+		id = "assets/images/chat.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/cursor.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/cursorBW.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/exit.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/minimize.ase";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/minimize.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/scanlines08.jpg";
 		path.set (id, id);
 		
@@ -463,8 +505,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
 		type.set ("assets/data/mago2.ttf", AssetType.FONT);
 		
+		className.set ("assets/images/chat.png", __ASSET__assets_images_chat_png);
+		type.set ("assets/images/chat.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/cursor.png", __ASSET__assets_images_cursor_png);
+		type.set ("assets/images/cursor.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/cursorBW.png", __ASSET__assets_images_cursorbw_png);
+		type.set ("assets/images/cursorBW.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/exit.png", __ASSET__assets_images_exit_png);
+		type.set ("assets/images/exit.png", AssetType.IMAGE);
+		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/minimize.ase", __ASSET__assets_images_minimize_ase);
+		type.set ("assets/images/minimize.ase", AssetType.BINARY);
+		
+		className.set ("assets/images/minimize.png", __ASSET__assets_images_minimize_png);
+		type.set ("assets/images/minimize.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/scanlines08.jpg", __ASSET__assets_images_scanlines08_jpg);
 		type.set ("assets/images/scanlines08.jpg", AssetType.IMAGE);
@@ -1265,7 +1325,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_mago2_ttf extends flash.text.Font { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_chat_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_cursor_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_cursorbw_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_exit_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_minimize_ase extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_minimize_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_scanlines08_jpg extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_twitter_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_vignette_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1341,6 +1407,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -1386,7 +1458,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
 @:font("assets/data/mago2.ttf") #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font {}
+@:image("assets/images/chat.png") #if display private #end class __ASSET__assets_images_chat_png extends lime.graphics.Image {}
+@:image("assets/images/cursor.png") #if display private #end class __ASSET__assets_images_cursor_png extends lime.graphics.Image {}
+@:image("assets/images/cursorBW.png") #if display private #end class __ASSET__assets_images_cursorbw_png extends lime.graphics.Image {}
+@:image("assets/images/exit.png") #if display private #end class __ASSET__assets_images_exit_png extends lime.graphics.Image {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
+@:file("assets/images/minimize.ase") #if display private #end class __ASSET__assets_images_minimize_ase extends lime.utils.Bytes {}
+@:image("assets/images/minimize.png") #if display private #end class __ASSET__assets_images_minimize_png extends lime.graphics.Image {}
 @:image("assets/images/scanlines08.jpg") #if display private #end class __ASSET__assets_images_scanlines08_jpg extends lime.graphics.Image {}
 @:image("assets/images/twitter.png") #if display private #end class __ASSET__assets_images_twitter_png extends lime.graphics.Image {}
 @:image("assets/images/vignette.png") #if display private #end class __ASSET__assets_images_vignette_png extends lime.graphics.Image {}

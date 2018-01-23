@@ -32,7 +32,11 @@ class PlayState extends FlxState
 	
 	override public function create():Void
 	{
+		
+		FlxG.mouse.load(AssetPaths.cursor__png, 2);
 		FlxG.camera.fade(FlxColor.BLACK, 7, true);
+		
+		FlxG.camera.bgColor = 0xFF7E2553;
 		
 		grpShortcuts = new FlxTypedGroup<File>();
 		add(grpShortcuts);
@@ -48,7 +52,7 @@ class PlayState extends FlxState
 		chatWindow = new ChatWindow(10, 10, 256, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
 		
-		testWindow = new ErrorWindow(50, 50, 200, 100, "WARNING");
+		testWindow = new ErrorWindow(100, 50, 200, 100, "WARNING");
 		testWindow.updateText("WARNING: FlixOS has booted into compatibility mode due to harddrive instability. Depending on severity, some programs may not have laoded correctly");
 		grpWindows.add(testWindow);
 		
@@ -82,7 +86,7 @@ class PlayState extends FlxState
 		grpShortcuts.add(file);
 		
 		
-		var chatShortcut:File = new File(8, 8, null, clickChat, "ChatCorruptor");
+		var chatShortcut:File = new File(8, 8, AssetPaths.chat__png, clickChat, "ChatCorruptor");
 		grpShortcuts.add(chatShortcut);
 		
 	}

@@ -23,6 +23,8 @@ class LoginState extends FlxState
 	override public function create():Void 
 	{
 		
+		FlxG.mouse.visible = true;
+		
 		btnReset = new FlxSpriteButton(0, 0, null, function(){FlxG.switchState(new BootState()); });
 		btnReset.makeGraphic(16, 16);
 		add(btnReset);

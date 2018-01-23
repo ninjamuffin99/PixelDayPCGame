@@ -65,6 +65,7 @@ class Pico8Colors extends FlxColor
 	public static var 13:FlxColor = 0xFF83769C;
 	/**
 	 *Pink
+	 * FF77A8
 	 */
 	public static var 14:FlxColor = 0xFFFF77A8;
 	/**

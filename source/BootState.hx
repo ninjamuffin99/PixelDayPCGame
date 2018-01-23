@@ -18,6 +18,9 @@ class BootState extends FlxState
 
 	override public function create():Void 
 	{
+		FlxG.mouse.load(AssetPaths.cursorBW__png, 2);
+		FlxG.mouse.visible = false;
+		
 		FlxG.sound.playMusic("assets/sounds/pcAmbience.mp3");
 		FlxG.sound.music.loopTime = 3500;
 		
