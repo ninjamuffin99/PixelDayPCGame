@@ -34,28 +34,28 @@ class ChatWindow extends Window
 		grpChat.y = 195;
 		add(grpChat);
 		
-		//initChat();
-		
 		for (i in 0...ChatLogs.dates.length)
 		{
-			var chatNum:File;
-			chatNum = new File(8, (11 * i) + 18, null, function()
+			//gets the first value in the Chatlogs.dates array, then uses it to use a Month from the MonthArray.months
+			//then adds the second value to get the date
+			var dateText:String = MonthArray.months[ChatLogs.dates[i][0]] + ChatLogs.dates[i][1];
+			
+			var chatNum:ChatFile;
+			chatNum = new ChatFile(8, (11 * i) + 18, null, function()
 			{
 				initChat();
 				chatArray = ChatLogs.dates[i][2];
 				grpButtons.remove(chatNum);
-			}, "text" + i, FlxColor.BLACK);
+			}, dateText, FlxColor.BLACK, width - 16);
+			
 			grpButtons.add(chatNum);
 		}
 		
 		initButtons();
-		
-		
 	}
 	
 	private function initChat():Void
 	{
-		
 		grpChat.revive();
 		grpButtons.kill();
 		
@@ -65,12 +65,8 @@ class ChatWindow extends Window
 	
 	private function initButtons():Void
 	{
-		
-		
 		grpButtons.revive();
 		grpChat.kill();
-		
-		
 	}
 	
 	override public function revive():Void 
@@ -96,7 +92,7 @@ class ChatWindow extends Window
 		super.update(elapsed);
 		
 		
-		if (FlxG.keys.justPressed.A || chatTimer <= 0)
+		if (chatTimer <= 0 || FlxG.keys.anyJustPressed(["SPACE", "A", "UP", "W"]))
 		{
 			if (chatArray.length > 0)
 			{
@@ -131,12 +127,12 @@ class ChatWindow extends Window
 		{
 			grpChat.y -= 10;
 		}
+		
 		for (i in 0...textArray.length)
 		{
 			grpChat.text += textArray[i];
 			grpChat.text += "\n";
 		}
-		
 	}
 	
 }
