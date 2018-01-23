@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxSpriteButton;
@@ -24,6 +25,10 @@ class LoginState extends FlxState
 	{
 		
 		FlxG.mouse.visible = true;
+		
+		var bg:FlxSprite = new FlxSprite();
+		bg.loadGraphic(AssetPaths.OSOTitle__png, false, 320, 240);
+		add(bg);
 		
 		btnReset = new FlxSpriteButton(0, 0, null, function(){FlxG.switchState(new BootState()); });
 		btnReset.makeGraphic(16, 16);

@@ -66,6 +66,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/OSOTitle.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/scanlines08.jpg");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -331,7 +335,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "363",
+			build: "368",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,
