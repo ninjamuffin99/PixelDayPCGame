@@ -10,9 +10,9 @@ import flixel.util.FlxColor;
 class ErrorWindow extends Window 
 {
 	
-	private var errorText:FlxText;
+	public var errorText:FlxText;
 
-	public function new(X:Float=0, Y:Float=0, width:Int=150, height:Int=100, name:String="UNEXPECTED ERROR", color:FlxColor=0xFFFF77A8) 
+	public function new(X:Float=0, Y:Float=0, width:Int=150, height:Int=100, name:String="UNEXPECTED ERROR", color:FlxColor=FlxColor.BLACK) 
 	{
 		super(X, Y, width, height, name, color);
 		

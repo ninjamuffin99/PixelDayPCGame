@@ -22,7 +22,7 @@ class ChatWindow extends Window
 	
 	private var erasing:Bool = false;
 
-	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="Cache Corruptor v1.0.5", color:FlxColor=0xFFFF77A8) 
+	public function new(X:Float=0, Y:Float=0, width:Int=200, height:Int=200, name:String="Cache Corruptor v1.0.5", color:FlxColor = FlxColor.BLACK) 
 	{
 		super(X, Y, width, height, name, color);
 		
@@ -32,13 +32,14 @@ class ChatWindow extends Window
 		grpChat = new FlxText();
 		grpChat.x = 8;
 		grpChat.y = 195;
+		grpChat.color = OSOPal.lightPink;
 		add(grpChat);
 		
 		for (i in 0...ChatLogs.dates.length)
 		{
 			//gets the first value in the Chatlogs.dates array, then uses it to use a Month from the MonthArray.months
 			//then adds the second value to get the date
-			var dateText:String = MonthArray.months[ChatLogs.dates[i][0]] + ChatLogs.dates[i][1];
+			var dateText:String = MonthArray.months[ChatLogs.dates[i][0]] + " " + ChatLogs.dates[i][1];
 			
 			var chatNum:ChatFile;
 			chatNum = new ChatFile(8, (11 * i) + 18, null, function()
@@ -50,6 +51,14 @@ class ChatWindow extends Window
 			
 			grpButtons.add(chatNum);
 		}
+		
+		var specialThanks:ChatFile;
+		specialThanks = new ChatFile(8, (11 * ChatLogs.dates.length) + 18, null, function()
+		{
+			initChat();
+			chatArray = ChatLogs.specialThanks[1];
+		}, "Special Thanks", FlxColor.BLACK, width - 16);
+		grpButtons.add(specialThanks);
 		
 		initButtons();
 	}

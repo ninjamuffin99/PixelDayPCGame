@@ -18,7 +18,7 @@ class ChatFile extends File
 	{
 		super(X, Y, iconGraphic, OnClick, text, color);
 		
-		icon.makeGraphic(width, 10);
+		icon.makeGraphic(width, 10, OSOPal.lightPink);
 		icon.alpha = 0.1;
 		fileName.x = X;
 		fileName.y = Y - 1;

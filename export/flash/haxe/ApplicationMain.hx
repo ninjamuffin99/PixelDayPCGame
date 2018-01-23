@@ -66,6 +66,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/OSOPal.ase");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
 		urls.push ("assets/images/OSOTitle.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -75,6 +79,14 @@ class ApplicationMain {
 		
 		
 		urls.push ("assets/images/twitter.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/TXT.ase");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/TXT.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -335,7 +347,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "368",
+			build: "402",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,

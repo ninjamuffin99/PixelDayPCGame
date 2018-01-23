@@ -21,7 +21,7 @@ class PlayState extends FlxState
 	private var grpWindows:FlxTypedGroup<Window>;
 	private var chatWindow:ChatWindow;
 	private var testWindow:ErrorWindow;
-	private var testWin2:Window;
+	private var testWin2:ErrorWindow;
 	
 	private var taskbar:FlxSprite;
 	private var grpTaskbar:FlxTypedGroup<TaskbarButton>;
@@ -36,8 +36,6 @@ class PlayState extends FlxState
 		FlxG.mouse.load(AssetPaths.cursor__png, 2);
 		FlxG.camera.fade(FlxColor.BLACK, 7, true);
 		
-		FlxG.camera.bgColor = 0xFF7E2553;
-		
 		grpShortcuts = new FlxTypedGroup<File>();
 		add(grpShortcuts);
 		
@@ -51,28 +49,31 @@ class PlayState extends FlxState
 		
 		chatWindow = new ChatWindow(10, 10, 256, 200, "Cache corruptor v1.0.3");
 		grpWindows.add(chatWindow);
+		chatWindow.kill();
 		
 		testWindow = new ErrorWindow(100, 50, 200, 100, "WARNING");
 		testWindow.updateText("WARNING: FlixOS has booted into compatibility mode due to harddrive instability. Depending on severity, some programs may not have laoded correctly");
 		grpWindows.add(testWindow);
 		
-		testWin2 = new Window(40, 70, 100, 100, "Also a test");
-		//grpWindows.add(testWin2);
+		testWin2 = new ErrorWindow(40, 70, 200, 200, "creds.txt");
+		testWin2.errorText.text = "A game by Cameron Taylor. Made for Pixel Day 2018 on Newgrounds.com in about 2 weeks. Used HaxeFlixel, Aseprite. \nMusic: \"bumble bee\" - Zion Toporowski \nSounds are from various free online places";
+		testWin2.kill();
+		grpWindows.add(testWin2);
 		
 		var taskH:Int = 16;
 		taskbar = new FlxSprite(0, FlxG.height - taskH);
-		taskbar.makeGraphic(FlxG.width, taskH);
+		taskbar.makeGraphic(FlxG.width, 1, OSOPal.lightPink);
 		add(taskbar);
 		
 		grpTaskbar = new FlxTypedGroup<TaskbarButton>();
 		add(grpTaskbar);
 		
-		grpWindows.forEachAlive(initTaskBar);
+		//grpWindows.forEachAlive(initTaskBar);
 		
 		
 		var current_date:Date = Date.now();
 		clock = new FlxText(FlxG.width - 50, taskbar.y, 0, (current_date.getMonth() + 1) + "/" + current_date.getDate() + "/" + current_date.getFullYear());
-		clock.color = FlxColor.BLACK;
+		clock.color = OSOPal.darkPurple;
 		add(clock);
 		
 		//addOverlayEffects();
@@ -82,12 +83,15 @@ class PlayState extends FlxState
 	
 	private function addShortcuts():Void
 	{
-		var file:File = new File(70, 70, "assets/images/twitter.png", clickTwitter, "cool");
+		var file:File = new File(8, 70, "assets/images/twitter.png", clickTwitter, "@ninja_muffin99", OSOPal.darkPurple);
 		grpShortcuts.add(file);
 		
 		
-		var chatShortcut:File = new File(8, 8, AssetPaths.chat__png, clickChat, "ChatCorruptor");
+		var chatShortcut:File = new File(8, 8, AssetPaths.chat__png, clickChat, "ChatCorruptor", OSOPal.darkPurple);
 		grpShortcuts.add(chatShortcut);
+		
+		var readme:File = new File(8, 88, AssetPaths.TXT__png, clickReadme, "creds.txt", OSOPal.darkPurple);
+		grpShortcuts.add(readme);
 		
 	}
 	
@@ -100,6 +104,12 @@ class PlayState extends FlxState
 	{
 		chatWindow.revive();
 		checkMouse(chatWindow);
+	}
+	
+	private function clickReadme():Void
+	{
+		testWin2.revive();
+		checkMouse(testWin2);
 	}
 	
 	private function addOverlayEffects():Void

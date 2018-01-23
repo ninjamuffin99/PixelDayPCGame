@@ -21,6 +21,8 @@ class LoginState extends FlxState
 	private var userName:FlxText;
 	private var lastLogin:FlxText;
 	
+	private var presents:FlxText;
+	
 	override public function create():Void 
 	{
 		
@@ -29,6 +31,10 @@ class LoginState extends FlxState
 		var bg:FlxSprite = new FlxSprite();
 		bg.loadGraphic(AssetPaths.OSOTitle__png, false, 320, 240);
 		add(bg);
+		
+		presents = new FlxText(16, 64, 0, "ninjamuffin99 presents...");
+		presents.color = OSOPal.lightPink;
+		add(presents);
 		
 		btnReset = new FlxSpriteButton(0, 0, null, function(){FlxG.switchState(new BootState()); });
 		btnReset.makeGraphic(16, 16);

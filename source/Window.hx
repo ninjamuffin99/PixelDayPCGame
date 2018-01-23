@@ -25,7 +25,7 @@ class Window extends FlxSpriteGroup
 	private var closeButton:FlxSpriteButton;
 	private var minimizeButton:FlxSpriteButton;
 
-	public function new(X:Float = 0, Y:Float = 0, width:Int = 200, height:Int = 200, name:String = "", color:FlxColor = 0xFFFF77A8) 
+	public function new(X:Float = 0, Y:Float = 0, width:Int = 200, height:Int = 200, name:String = "", color:FlxColor = FlxColor.BLACK) 
 	{
 		super();
 		
@@ -33,7 +33,7 @@ class Window extends FlxSpriteGroup
 		y = Y;
 		
 		outLine = new FlxSprite( -2, -2);
-		outLine.makeGraphic(Std.int(width + 4), Std.int(height + 4), color.getComplementHarmony());
+		outLine.makeGraphic(Std.int(width + 4), Std.int(height + 4), OSOPal.darkPink);
 		add(outLine);
 		
 		backGround = new FlxSprite(0, 0);
@@ -41,15 +41,15 @@ class Window extends FlxSpriteGroup
 		add(backGround);
 		
 		topBar = new FlxSprite(0, 0);
-		topBar.makeGraphic(width, 14, color.getAnalogousHarmony().warmer);
+		topBar.makeGraphic(width, 14, color);
 		add(topBar);
 		
 		topBarOutline = new FlxSprite(0, 14);
-		topBarOutline.makeGraphic(width, 1, color.getComplementHarmony());
+		topBarOutline.makeGraphic(width, 1, OSOPal.lightPink);
 		add(topBarOutline);
 		
 		title = new FlxText(2, 1, 0, name);
-		title.color = color.getComplementHarmony();
+		title.color = OSOPal.darkPurple;
 		add(title);
 		
 		closeButton = new FlxSpriteButton(width - 12, 2, null, closeWindow);
@@ -58,7 +58,7 @@ class Window extends FlxSpriteGroup
 		
 		minimizeButton = new FlxSpriteButton(width - 12 - 12, 2, null, minimizeWindow);
 		minimizeButton.loadGraphic(AssetPaths.minimize__png);
-		add(minimizeButton);
+		//add(minimizeButton);
 		
 		FlxMouseEventManager.add(topBar, winDragSet);
 	}

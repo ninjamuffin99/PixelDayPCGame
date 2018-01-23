@@ -6,8 +6,50 @@ package;
  */
 class ChatLogs 
 {
-	//SYNTAX -- MONTH, DATE, CHAT
 	
+	public static var specialThanks:Array<Dynamic> =  
+	[
+		"Special Thanks",
+		[
+			"In no particular order of importance",
+			"Tom Fulp",
+			"The pic of Tom in a turtleneck",
+			"PhantomArcade",
+			"EiGiBeast",
+			"Moawling",
+			"FuShark",
+			"MisterSandmanCT/Cameron Talbot",
+			"HIRO NO HIRO",
+			"Stuffed Wombat",
+			"BrandyBuizel",
+			"DigitalFudge",
+			"aninvisiblepirate",
+			"TheOverGhoul",
+			"Tanner Monkman",
+			"Brett Procee",
+			"Ryan Dugaro",
+			"Paol from CFEC",
+			"Charles from CFEC",
+			"The Youth Zone Staff",
+			"Other CFEC Staff",
+			"The HaxeFlixel community, specifically the discord",
+			"Doki Doki Lit Club",
+			"Nina Freeman",
+			"Sam Barlow",
+			"Kyle Seeley",
+			"Ryan Koons",
+			"loodumb darray",
+			"every single person on Newgrounds.com",
+			"specifically the ones who follow me hehe",
+			"more specifically the people who upload good stuff",
+			"and YOU",
+			"the person who cares enough about this game",
+			"to see the people that i care about",
+			"you are cool"
+		]
+	];
+	
+	//SYNTAX -- MONTH, DATE, CHAT
 	public static var dates:Array<Dynamic> = 
 	[
 		//March 10
