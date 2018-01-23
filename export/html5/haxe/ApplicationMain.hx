@@ -34,12 +34,104 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/chat.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/cursor.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/cursorBW.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/exit.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/minimize.ase");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/minimize.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/OSOPal.ase");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/OSOTitle.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/scanlines08.jpg");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/twitter.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/TXT.ase");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/TXT.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/vignette.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/music/bumblebee.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/music/Denwa-wo-Kakete-.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
 		urls.push ("assets/music/music-goes-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/sounds/girlCrying.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/message.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouse.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP0.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP1.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseP2.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/mouseR.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
+		
+		
+		urls.push ("assets/sounds/pcAmbience.mp3");
+		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
 		urls.push ("assets/sounds/sounds-go-here.txt");
@@ -251,7 +343,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "3",
+			build: "408",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,
@@ -269,13 +361,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: false,
-					height: 480,
+					height: 720,
 					parameters: "{}",
 					resizable: false,
 					stencilBuffer: true,
 					title: "PixelDayPCGame",
 					vsync: true,
-					width: 640,
+					width: 960,
 					x: null,
 					y: null
 				},
@@ -293,7 +385,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 640, 480, "000000");
+		openfl.Lib.embed (null, 960, 720, "000000");
 		#end
 		#else
 		create ();

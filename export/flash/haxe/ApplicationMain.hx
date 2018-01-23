@@ -34,10 +34,6 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
-		urls.push ("mago2");
-		types.push (lime.Assets.AssetType.FONT);
-		
-		
 		urls.push ("assets/images/chat.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -94,11 +90,11 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
-		urls.push ("assets/music/757870_Denwa-wo-Kakete-.mp3");
+		urls.push ("assets/music/bumblebee.mp3");
 		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
-		urls.push ("assets/music/bumblebee.mp3");
+		urls.push ("assets/music/Denwa-wo-Kakete-.mp3");
 		types.push (lime.Assets.AssetType.MUSIC);
 		
 		
@@ -347,7 +343,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "405",
+			build: "409",
 			company: "ninjaMuffin",
 			file: "PixelDayPCGame",
 			fps: 60,

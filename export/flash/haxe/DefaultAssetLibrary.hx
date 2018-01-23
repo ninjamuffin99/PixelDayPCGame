@@ -52,7 +52,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		
-		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_mago2_ttf);
 		
 		
 		
@@ -122,8 +121,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
-		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
-		type.set ("assets/data/mago2.ttf", AssetType.FONT);
 		className.set ("assets/images/chat.png", __ASSET__assets_images_chat_png);
 		type.set ("assets/images/chat.png", AssetType.IMAGE);
 		className.set ("assets/images/cursor.png", __ASSET__assets_images_cursor_png);
@@ -152,10 +149,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/TXT.png", AssetType.IMAGE);
 		className.set ("assets/images/vignette.png", __ASSET__assets_images_vignette_png);
 		type.set ("assets/images/vignette.png", AssetType.IMAGE);
-		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
-		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
 		className.set ("assets/music/bumblebee.mp3", __ASSET__assets_music_bumblebee_mp3);
 		type.set ("assets/music/bumblebee.mp3", AssetType.MUSIC);
+		className.set ("assets/music/Denwa-wo-Kakete-.mp3", __ASSET__assets_music_denwa_wo_kakete__mp3);
+		type.set ("assets/music/Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/sounds/girlCrying.mp3", __ASSET__assets_sounds_girlcrying_mp3);
@@ -257,10 +254,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
-		id = "assets/data/mago2.ttf";
-		className.set (id, __ASSET__assets_data_mago2_ttf);
-		
-		type.set (id, AssetType.FONT);
 		id = "assets/images/chat.png";
 		path.set (id, id);
 		
@@ -317,11 +310,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
-		id = "assets/music/757870_Denwa-wo-Kakete-.mp3";
+		id = "assets/music/bumblebee.mp3";
 		path.set (id, id);
 		
 		type.set (id, AssetType.MUSIC);
-		id = "assets/music/bumblebee.mp3";
+		id = "assets/music/Denwa-wo-Kakete-.mp3";
 		path.set (id, id);
 		
 		type.set (id, AssetType.MUSIC);
@@ -530,9 +523,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		
-		className.set ("assets/data/mago2.ttf", __ASSET__assets_data_mago2_ttf);
-		type.set ("assets/data/mago2.ttf", AssetType.FONT);
-		
 		className.set ("assets/images/chat.png", __ASSET__assets_images_chat_png);
 		type.set ("assets/images/chat.png", AssetType.IMAGE);
 		
@@ -575,11 +565,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/vignette.png", __ASSET__assets_images_vignette_png);
 		type.set ("assets/images/vignette.png", AssetType.IMAGE);
 		
-		className.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", __ASSET__assets_music_757870_denwa_wo_kakete__mp3);
-		type.set ("assets/music/757870_Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
-		
 		className.set ("assets/music/bumblebee.mp3", __ASSET__assets_music_bumblebee_mp3);
 		type.set ("assets/music/bumblebee.mp3", AssetType.MUSIC);
+		
+		className.set ("assets/music/Denwa-wo-Kakete-.mp3", __ASSET__assets_music_denwa_wo_kakete__mp3);
+		type.set ("assets/music/Denwa-wo-Kakete-.mp3", AssetType.MUSIC);
 		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
@@ -1364,7 +1354,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_mago2_ttf extends flash.text.Font { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_chat_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_cursor_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_cursorbw_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1379,8 +1368,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_images_txt_ase extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_txt_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_vignette_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends flash.media.Sound { }
+@:keep @:bind #if display private #end class __ASSET__assets_music_denwa_wo_kakete__mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_girlcrying_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_message_mp3 extends flash.media.Sound { }
@@ -1432,7 +1421,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif html5
 
 
-@:keep #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font { public function new () { super (); name = "mago2"; } } 
 
 
 
@@ -1505,7 +1493,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
-@:font("assets/data/mago2.ttf") #if display private #end class __ASSET__assets_data_mago2_ttf extends lime.text.Font {}
 @:image("assets/images/chat.png") #if display private #end class __ASSET__assets_images_chat_png extends lime.graphics.Image {}
 @:image("assets/images/cursor.png") #if display private #end class __ASSET__assets_images_cursor_png extends lime.graphics.Image {}
 @:image("assets/images/cursorBW.png") #if display private #end class __ASSET__assets_images_cursorbw_png extends lime.graphics.Image {}
@@ -1520,8 +1507,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/images/TXT.ase") #if display private #end class __ASSET__assets_images_txt_ase extends lime.utils.Bytes {}
 @:image("assets/images/TXT.png") #if display private #end class __ASSET__assets_images_txt_png extends lime.graphics.Image {}
 @:image("assets/images/vignette.png") #if display private #end class __ASSET__assets_images_vignette_png extends lime.graphics.Image {}
-@:file("assets/music/757870_Denwa-wo-Kakete-.mp3") #if display private #end class __ASSET__assets_music_757870_denwa_wo_kakete__mp3 extends lime.utils.Bytes {}
 @:file("assets/music/bumblebee.mp3") #if display private #end class __ASSET__assets_music_bumblebee_mp3 extends lime.utils.Bytes {}
+@:file("assets/music/Denwa-wo-Kakete-.mp3") #if display private #end class __ASSET__assets_music_denwa_wo_kakete__mp3 extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/sounds/girlCrying.mp3") #if display private #end class __ASSET__assets_sounds_girlcrying_mp3 extends lime.utils.Bytes {}
 @:file("assets/sounds/message.mp3") #if display private #end class __ASSET__assets_sounds_message_mp3 extends lime.utils.Bytes {}
@@ -1575,7 +1562,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 #end
 
 #if (openfl && !flash)
-@:keep #if display private #end class __ASSET__OPENFL__assets_data_mago2_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__assets_data_mago2_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_nokiafc22_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_monsterrat_ttf (); src = font.src; name = font.name; super (); }}
 

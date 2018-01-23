@@ -2,7 +2,8 @@ Todo:
 	-make user select screen
 	make so that the bumble bee music plays
 	maybe fix up some story bits and play through it
-	format story stuff so that itll al fit on the screen
+	format story stuff so that itll all fit on the screen
+	fix the twitter icon so its more outline-y, instead of filled in
 	
 Done:
 	Got simple file templates goin
