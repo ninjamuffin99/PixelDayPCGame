@@ -34,17 +34,18 @@ class LoginState extends FlxState
 		
 		presents = new FlxText(16, 64, 0, "ninjamuffin99 presents...");
 		presents.color = OSOPal.lightPink;
-		add(presents);
+		//add(presents);
 		
 		btnReset = new FlxSpriteButton(0, 0, null, function(){FlxG.switchState(new BootState()); });
 		btnReset.makeGraphic(16, 16);
-		add(btnReset);
+		//add(btnReset);
 		
 		btnLogin = new FlxSpriteButton(200, 100, null, login);
-		btnLogin.makeGraphic(64, 32, FlxColor.RED);
+		btnLogin.makeGraphic(64, 32, FlxColor.TRANSPARENT);
 		add(btnLogin);
 		
 		userName = new FlxText(btnLogin.x, btnLogin.y, 0, "Admin", 16);
+		userName.color = OSOPal.lightPurple;
 		add(userName);
 		
 		lastLogin = new FlxText(userName.x, userName.y + 18, 0, "last login: 09/13/1999");

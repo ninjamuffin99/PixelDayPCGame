@@ -21,6 +21,9 @@ class BootState extends FlxState
 		FlxG.mouse.load(AssetPaths.cursorBW__png, 2);
 		FlxG.mouse.visible = false;
 		
+		FlxG.save.bind("File");
+		SaveData.load();
+		
 		FlxG.sound.playMusic("assets/sounds/pcAmbience.mp3");
 		FlxG.sound.music.loopTime = 3500;
 		
@@ -57,7 +60,15 @@ class BootState extends FlxState
 	{
 		if (bootTexts.length == 0)
 		{
-			FlxG.switchState(new LoginState());
+			if (SaveData.bsod)
+			{
+				FlxG.switchState(new BSOD());
+			}
+			else
+			{
+				FlxG.switchState(new LoginState());
+			}
+			
 		}
 		
 		printing.text += " -- Complete\n";

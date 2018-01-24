@@ -30,6 +30,8 @@ class PlayState extends FlxState
 	
 	private var clock:FlxText;
 	
+	public static var playedMusic:Bool = false;
+	
 	override public function create():Void
 	{
 		
@@ -39,10 +41,7 @@ class PlayState extends FlxState
 		grpShortcuts = new FlxTypedGroup<File>();
 		add(grpShortcuts);
 		
-		
 		addShortcuts();
-		
-		FlxG.sound.play("assets/music/757870_Denwa-wo-Kakete-.mp3", 0.7);
 		
 		grpWindows = new FlxTypedGroup<Window>();
 		add(grpWindows);
@@ -121,7 +120,6 @@ class PlayState extends FlxState
 		scanLines.updateHitbox();*/
 		scanLines.blend = BlendMode.MULTIPLY;
 		scanLines.alpha = 0.1;
-		scanLines.ignoreDrawDebug = true;
 		add(scanLines);
 		
 		var vig:FlxSprite;
@@ -133,10 +131,21 @@ class PlayState extends FlxState
 		vig.alpha = 0.4;
 		add(vig);
 	}
+	
+	private var BSODTimer:Float = FlxG.random.float(1, 60);
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		
+		if (chatWindow.aliveNum == 1)
+		{
+			BSODTimer -= FlxG.elapsed;
+			if (BSODTimer <= 0)
+			{
+				FlxG.switchState(new BSOD());
+			}
+		}
 		
 		grpWindows.forEachAlive(checkMouse);
 		

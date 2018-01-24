@@ -47,6 +47,18 @@ class ChatWindow extends Window
 				initChat();
 				chatArray = ChatLogs.dates[i][2];
 				grpButtons.remove(chatNum);
+				
+				if (!PlayState.playedMusic)
+				{
+					FlxG.sound.play(AssetPaths.bumblebee__mp3, 0.5, true);
+					PlayState.playedMusic = true;
+				}
+				
+				if (FlxG.random.bool(0.0001))
+				{
+					FlxG.switchState(new BSOD());
+				}
+				
 			}, dateText, FlxColor.BLACK, width - 16);
 			
 			grpButtons.add(chatNum);
@@ -72,11 +84,41 @@ class ChatWindow extends Window
 		addText();
 	}
 	
+	private var finalFileExists:Bool = false;
+	
 	private function initButtons():Void
 	{
 		grpButtons.revive();
 		grpChat.kill();
+		
+		
+		aliveNum = 0;
+		grpButtons.forEachAlive(checkCount);
+		
+		if (aliveNum == 1 && !finalFileExists)
+		{
+			var finalFile:ChatFile;
+			finalFile = new ChatFile(8, 66, null, function()
+			{
+				initChat(); 
+				chatArray = ChatLogs.secret[2];
+				
+			}, "Sept 13", FlxColor.BLACK, Std.int(width - 16));
+			add(finalFile);
+			
+			finalFileExists = true;
+		}
+		
+		FlxG.log.add(aliveNum);
 	}
+	
+	public var aliveNum:Int = 0;
+	
+	private function checkCount(b:FlxSprite):Void
+	{
+		aliveNum += 1;
+	}
+	
 	
 	override public function revive():Void 
 	{
@@ -123,7 +165,7 @@ class ChatWindow extends Window
 	
 	private function addText():Void
 	{
-		FlxG.sound.play("assets/sounds/message.mp3");
+		FlxG.sound.play("assets/sounds/message.mp3", 0.7);
 		textArray.push(chatArray[0]);
 		chatArray.remove(chatArray[0]);
 		grpChat.text = "";

@@ -1,9 +1,5 @@
 Todo:
-	-make user select screen
-	make so that the bumble bee music plays
-	maybe fix up some story bits and play through it
-	format story stuff so that itll all fit on the screen
-	fix the twitter icon so its more outline-y, instead of filled in
+	taskbar black
 	
 Done:
 	Got simple file templates goin
@@ -17,4 +13,8 @@ Done:
 		right now it only works if you call it manually
 		make it so you can put a graphic onto it
 	-make it so in the chat corruptor you can select files and stuff",
-	
+	-make user select screen
+	make so that the bumble bee music plays
+	maybe fix up some story bits and play through it
+	format story stuff so that itll all fit on the screen
+	fix the twitter icon so its more outline-y, instead of filled in

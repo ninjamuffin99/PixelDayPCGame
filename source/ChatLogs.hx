@@ -49,6 +49,19 @@ class ChatLogs
 		]
 	];
 	
+	public static var secret:Array<Dynamic> = 
+	[	
+		9, 13,
+		[
+			"hey",
+			"I'm sorry for what i put you through",
+			"this isnt Nina",
+			"or anyone she knows",
+			"I am sorry Vivian",
+			"I'll miss you"
+		]
+	];
+	
 	//SYNTAX -- MONTH, DATE, CHAT
 	public static var dates:Array<Dynamic> = 
 	[
@@ -104,7 +117,8 @@ class ChatLogs
 				"haha yeah right",
 				"i mean i cant even get my site going",
 				"but i guess i accept your compliment haha",
-				"well i dont really know too many people to begin with",
+				"well...",
+				"i dont really know too many people to begin with",
 				"i just play video games and stay at home",
 				"hey video games are great!",
 				"You got a Nintendo 64?",
@@ -224,7 +238,7 @@ class ChatLogs
 				"my mom said she'll give me 100 bucks",
 				"when I graduate",
 				"thats a good amount of used video games",
-				"but she's kinda strict about me being on the computer",
+				"but she's strict about me being on the computer",
 				"that kinda sucks",
 				"my life is pretty much computers at this point",
 				"im so jealous",
@@ -259,7 +273,7 @@ class ChatLogs
 				"no problem",
 				"i'll catch up with you later",
 				"yeah,",
-				"maybe i'll start programming stuff while youre gone",
+				"maybe i'll start programming stuff",
 				"i gotta catch up with your coolness",
 				"youre an absolute nerd",
 				"see ya",
@@ -283,7 +297,7 @@ class ChatLogs
 				"SHIT",
 				"yeah",
 				"it feels especially bad ",
-				"because i feel like i studied super hard for that test",
+				"because i felt i studied super hard for that test",
 				"i gave my teacher compliments on my test haha",
 				"who knows,",
 				"maybe that boosted your mark a bit hahah",
@@ -295,7 +309,8 @@ class ChatLogs
 				"i really wanna go to college,",
 				"but more for the experience",
 				"like it could be a change of pace for me and stuff",
-				"my mom wants me to go, but more so i can meet people an shit",
+				"my mom wants me to go,",
+				"but more so i can meet people and whatnot",
 				"not that its bad to meet people",
 				"but i just want to go for my reasons",
 				"not hers you know?",
@@ -461,7 +476,8 @@ class ChatLogs
 				"yeah, i dont live too far from it",
 				"im so excited",
 				"same",
-				"so the plan is pretty much do whatever around the city",
+				"so the plan is pretty much ",
+				"do whatever around the city",
 				"i really wanna sight see and stuff",
 				"i havent been here for a while",
 				"what are you up to today?",
@@ -473,7 +489,8 @@ class ChatLogs
 		[
 			4, 17,
 			[
-				"hey Nina! It was cool to hang out with you when I was in Seattle",
+				"hey Nina! It was cool to hang out",
+				"when I was in Seattle",
 				"Nina?"
 			]
 		],
@@ -488,20 +505,23 @@ class ChatLogs
 				"sorry I can't talk right now",
 				"oh thats alright",
 				"we can talk whenever you feel like",
-				"just thought id let you know my cousins thought you were cool haha"
+				"just thought id let you know",
+				"my cousins thought you were cool haha"
 			]
 		],
 		//April 21st
 		[
 			4, 21,
 			[
-				"This is officer Cheng from the Seattle Police Department",
+				"This is officer Cheng",
+				"from the Seattle Police Department",
 				"the fuck",
 				"i'd like to ask you questions about Nina Faye",
 				"umm is this real?",
 				"yes",
 				"judging from previous messages",
-				"You were one of the last people Nina saw before she went missing",
+				"You were one of the last people Nina saw",
+				"before she went missing",
 				"on the night of April 16th",
 				"no fucking way",
 				"shit",
@@ -513,12 +533,14 @@ class ChatLogs
 				"ok",
 				"first question",
 				"how did you and Nina meet?",
-				"well, we were both in the same IRC chat with some friends",
+				"well, we were both in the some IRC chat",
+				"with some friends",
 				"i think we had mutual friends",
 				"ok",
-				"how long do you think you and Nina have been in contact?",
-				"i think we met in that IRC chat late Feb to early March",
-				"but i think we really started knowing each other in March",
+				"how long have Nina have been in contact?",
+				"i think we met in that IRC chat...",
+				"late Feb to early March??",
+				"but we really started knowing each other in March",
 				"question three",
 				"how much do you know about Nina?",
 				"i know she's just finishing high school",
@@ -527,13 +549,12 @@ class ChatLogs
 				"anything in particular you'd need to know?",
 				"how do you think she was emotionally",
 				"i dont really know",
-				"she seemed really cheery and happy when i met her",
+				"she seemed really happy when i met her",
 				"and online it was more or less the same",
 				"do you know anyone in her personal life?",
 				"not really",
 				"ive heard about her mom",
 				"but i dont really know much about her",
-				"now",
 				"if you dont mind",
 				"i'll be ask questions about you",
 				"are you comfortable with that?",
@@ -545,14 +566,16 @@ class ChatLogs
 				"Where do you live?",
 				"Boston",
 				"Where do you work?",
-				"I'm a student at MIT",
+				"I'm a college student",
 				"alright",
 				"for further questioning",
 				"I'll be sure to get the Boston Police to contact you",
 				"and have them forward answers to me",
 				"alright",
-				"hey, was there any reason we had to do this online?",
-				"would it have been easier for me to head to the station?",
+				"hey, was there any reason ",
+				"we had to do this online?",
+				"would it have been easier for me ",
+				"to head to the station?",
 				"hello?"
 			]
 		],
@@ -606,8 +629,9 @@ class ChatLogs
 				"god",
 				"some creepy stuff is happening",
 				"they know where you are right now",
-				"they're probably reading these messages right now",
-				"you need to find someplace safe and call the cops",
+				"they're probably reading these messages",
+				"you need to find someplace safe",
+				"and call the cops",
 				"dont message me back",
 				"we need to stop talking",
 				"i don't know if we'll ever talk again",

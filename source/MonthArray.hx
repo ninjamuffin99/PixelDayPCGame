@@ -15,7 +15,12 @@ class MonthArray
 	"April",
 	"May",
 	"June",
-	"July"
+	"July",
+	"August",
+	"Sept",
+	"Oct",
+	"Nov",
+	"Dec"
 	];
 	
 }
