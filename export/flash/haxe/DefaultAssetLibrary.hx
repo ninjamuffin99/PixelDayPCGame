@@ -80,6 +80,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -137,6 +138,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/minimize.png", AssetType.IMAGE);
 		className.set ("assets/images/OSOPal.ase", __ASSET__assets_images_osopal_ase);
 		type.set ("assets/images/OSOPal.ase", AssetType.BINARY);
+		className.set ("assets/images/OSOThumbNail.png", __ASSET__assets_images_osothumbnail_png);
+		type.set ("assets/images/OSOThumbNail.png", AssetType.IMAGE);
 		className.set ("assets/images/OSOTitle.png", __ASSET__assets_images_osotitle_png);
 		type.set ("assets/images/OSOTitle.png", AssetType.IMAGE);
 		className.set ("assets/images/scanlines08.jpg", __ASSET__assets_images_scanlines08_jpg);
@@ -286,6 +289,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.BINARY);
+		id = "assets/images/OSOThumbNail.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/OSOTitle.png";
 		path.set (id, id);
 		
@@ -546,6 +553,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/OSOPal.ase", __ASSET__assets_images_osopal_ase);
 		type.set ("assets/images/OSOPal.ase", AssetType.BINARY);
+		
+		className.set ("assets/images/OSOThumbNail.png", __ASSET__assets_images_osothumbnail_png);
+		type.set ("assets/images/OSOThumbNail.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/OSOTitle.png", __ASSET__assets_images_osotitle_png);
 		type.set ("assets/images/OSOTitle.png", AssetType.IMAGE);
@@ -1362,6 +1372,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_images_minimize_ase extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_minimize_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_osopal_ase extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_osothumbnail_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_osotitle_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_scanlines08_jpg extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_twitter_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -1449,6 +1460,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -1501,6 +1513,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/images/minimize.ase") #if display private #end class __ASSET__assets_images_minimize_ase extends lime.utils.Bytes {}
 @:image("assets/images/minimize.png") #if display private #end class __ASSET__assets_images_minimize_png extends lime.graphics.Image {}
 @:file("assets/images/OSOPal.ase") #if display private #end class __ASSET__assets_images_osopal_ase extends lime.utils.Bytes {}
+@:image("assets/images/OSOThumbNail.png") #if display private #end class __ASSET__assets_images_osothumbnail_png extends lime.graphics.Image {}
 @:image("assets/images/OSOTitle.png") #if display private #end class __ASSET__assets_images_osotitle_png extends lime.graphics.Image {}
 @:image("assets/images/scanlines08.jpg") #if display private #end class __ASSET__assets_images_scanlines08_jpg extends lime.graphics.Image {}
 @:image("assets/images/twitter.png") #if display private #end class __ASSET__assets_images_twitter_png extends lime.graphics.Image {}
